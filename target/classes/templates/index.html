@@ -29,6 +29,13 @@
 					</p>
 				</div>
 
+				<div sec:authorize="hasRole('admin')">
+					<p>
+						<a href="/bus/"><i class="fas fa-bus-alt ml-2"></i> Ir a 
+							Buses 2</a>
+					</p>
+				</div>
+
 
 				<div sec:authorize="hasRole('admin')">
 					<p>

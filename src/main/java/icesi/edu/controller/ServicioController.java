@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import icesi.edu.delegate.BusDelegate;
+import icesi.edu.delegate.BusDelegate2;
 import icesi.edu.delegate.ConductorDelegate;
 import icesi.edu.delegate.RutasDelegate;
 import icesi.edu.delegate.ServiciosDelegate;
@@ -32,15 +32,14 @@ import icesi.edu.services.ServicioService;
 @Controller
 public class ServicioController {
 
-	
 	private ServiciosDelegate delegate;
 	private RutasDelegate rutasDelegate;
 	private ConductorDelegate conductorDelegate;
-	private BusDelegate busDelegate;
+	private BusDelegate2 busDelegate;
 
 	@Autowired
 	public ServicioController(ServicioService service, ServiciosDelegate delegate, RutasDelegate rutasDelegate,
-			ConductorDelegate conductorDelegate, BusDelegate busDelegate) {
+			ConductorDelegate conductorDelegate, BusDelegate2 busDelegate) {
 		this.service = service;
 		this.delegate = delegate;
 		this.rutasDelegate = rutasDelegate;
@@ -57,12 +56,11 @@ public class ServicioController {
 
 	@GetMapping("/servicios/add-servicio")
 	public String busesAdd(Model model) {
-		
+
 		model.addAttribute("buses", busDelegate.findAll());
 		model.addAttribute("conductores", conductorDelegate.findAll());
 		model.addAttribute("rutas", rutasDelegate.findAll());
-		
-		
+
 		model.addAttribute("tmio1Servicio", new Tmio1Servicio());
 		return "servicios/add";
 	}
@@ -73,7 +71,6 @@ public class ServicioController {
 		if (!action.equals("Cancel")) {
 			if (bindingResult.hasErrors()) {
 
-				
 				model.addAttribute("buses", busDelegate.findAll());
 				model.addAttribute("conductores", conductorDelegate.findAll());
 				model.addAttribute("rutas", rutasDelegate.findAll());
@@ -88,7 +85,7 @@ public class ServicioController {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			
+
 			model.addAttribute("buses", busDelegate.findAll());
 			model.addAttribute("conductores", conductorDelegate.findAll());
 			model.addAttribute("rutas", rutasDelegate.findAll());
@@ -110,7 +107,7 @@ public class ServicioController {
 				break;
 			}
 		}
-		
+
 		model.addAttribute("buses", busDelegate.findAll());
 		model.addAttribute("conductores", conductorDelegate.findAll());
 		model.addAttribute("rutas", rutasDelegate.findAll());
@@ -137,7 +134,6 @@ public class ServicioController {
 			e.printStackTrace();
 		}
 
-		
 		model.addAttribute("buses", busDelegate.findAll());
 		model.addAttribute("conductores", conductorDelegate.findAll());
 		model.addAttribute("rutas", rutasDelegate.findAll());
@@ -153,7 +149,7 @@ public class ServicioController {
 	}
 
 	private ServicioService service;
-	
+
 	@PostMapping("/servicios/filter-servicio")
 	public String showConsultForm2(@ModelAttribute Tmio1Servicio tmio1Servicio, Model model) {
 

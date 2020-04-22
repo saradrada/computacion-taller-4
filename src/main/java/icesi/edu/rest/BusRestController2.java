@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import icesi.edu.model.BusType;
 import icesi.edu.model.Tmio1Bus;
 import icesi.edu.services.BusService;
+import icesi.edu.services.BusService2;
 
 @RestController
-public class BusRestController {
+public class BusRestController2 {
 
 	@Autowired
 	private BusService service;
