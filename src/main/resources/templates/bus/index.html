@@ -44,6 +44,8 @@
 								<td th:text="${bus.modelo}"></td>
 								<td th:text="${bus.placa}"></td>
 								<td th:text="${bus.tipo}"></td>
+								<td><a th:href="@{/bus/delete/{id}(id=${bus.id})}"
+								class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 							</tr>
 						</tbody>
 					</table>

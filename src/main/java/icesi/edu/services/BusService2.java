@@ -16,12 +16,12 @@ public class BusService2 {
 	private IBusDao2 busDao;
 
 	@Transactional
-	public void save(Tmio1Bus bus) {
+	public Tmio1Bus save(Tmio1Bus bus) {
 		busDao.save(bus);
+		return bus;
 	}
 
 	public Iterable<Tmio1Bus> findAll() {
-
 		return busDao.findAll();
 	}
 
@@ -33,4 +33,8 @@ public class BusService2 {
 		return busDao.findById(id);
 	}
 
+	@Transactional
+	public void delete(Tmio1Bus bus) {
+		busDao.delete(bus);
+	}
 }

@@ -21,14 +21,6 @@
 			<div class="col-md-6">
 				<h2 th:case="null">Sistema MIO</h2>
 
-
-				<div sec:authorize="hasRole('admin')">
-					<p>
-						<a href="/buses/"><i class="fas fa-bus-alt ml-2"></i> Ir a
-							Buses</a>
-					</p>
-				</div>
-
 				<div sec:authorize="hasRole('admin')">
 					<p>
 						<a href="/bus/"><i class="fas fa-bus-alt ml-2"></i> Ir a 

@@ -21,28 +21,28 @@
 		
 		<div class="row">
 			<div class="col-md-6">
-				<form action="#" th:action="@{/sitios/add}" th:object="${tmio1Sitio}"
-					method="post">
+				<form action="#" th:action="@{/sitios/add}"
+					th:object="${tmio1Sitio}" method="post">
 					<div class="row">
-						
+
 						<div class="form-group col-md-6">
 							<label for="nombre" class="col-form-label">Nombre</label> <input
-								type="text" th:field="*{nombre}" class="form-control" id="nombre"
-								placeholder="Nombre"> <span
+								type="text" th:field="*{nombre}" class="form-control"
+								id="nombre" placeholder="Nombre"> <span
 								th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"
 								class="text-danger"></span>
 						</div>
-						
+
 						<div class="form-group col-md-6">
-							<label for="descripcion" class="col-form-label">Descripcion</label> <input
-								type="text" th:field="*{descripcion}" class="form-control" id="descripcion"
-								placeholder="Descripcion"> <span
-								th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"
-								class="text-danger"></span>
+							<label for="descripcion" class="col-form-label">Descripcion</label>
+							<input type="text" th:field="*{descripcion}" class="form-control"
+								id="descripcion" placeholder="Descripcion"> <span
+								th:if="${#fields.hasErrors('descripcion')}"
+								th:errors="*{descripcion}" class="text-danger"></span>
 						</div>
-						
-						
-						
+
+
+
 						<div></div>
 					</div>
 					<div class="row">

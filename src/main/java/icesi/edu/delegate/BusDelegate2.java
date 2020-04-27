@@ -12,7 +12,6 @@ import icesi.edu.model.Tmio1Bus;
 @Component
 public class BusDelegate2 {
 
-
 	public final static String URI = "http://localhost:8080/";
 	private RestTemplate rest = new RestTemplate();
 
@@ -56,5 +55,9 @@ public class BusDelegate2 {
 			throw new IllegalArgumentException("bus is null");
 		}
 
+	}
+
+	public void delete(Integer id) {
+		rest.delete(URI + "api/bus/" + id);
 	}
 }

@@ -1,6 +1,7 @@
 package icesi.edu.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,14 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import icesi.edu.model.BusType;
 import icesi.edu.model.Tmio1Bus;
-import icesi.edu.services.BusService;
 import icesi.edu.services.BusService2;
 
 @RestController
 public class BusRestController2 {
 
 	@Autowired
-	private BusService service;
+	private BusService2 service;
 
 	@GetMapping("/api/bus/{id}")
 	public Tmio1Bus findById(@PathVariable("id") String id) {
@@ -52,6 +52,11 @@ public class BusRestController2 {
 		}
 		
 		return null;
+	}
+	@DeleteMapping("/api/bus/{id}")
+	public void delete(@PathVariable( "id") Integer id) {
+		Tmio1Bus bus = service.findById(id);
+		service.delete(bus);
 		
 	}
 }

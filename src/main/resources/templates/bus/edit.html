@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Consult Bus</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="../css/shards.min.css">
+</head>
+
+<body>
+	<div class="container my-5">
+		<h2 class="mb-5">Bus</h2>
+		<form action="#" th:object="${tmio1Bus}"
+			th:action="@{/bus/edit/{id}(id=${tmio1Bus.id})}" method="post">
+			<div class="form-group row">
+				<label for="staticEmail" class="col-sm-2 col-form-label">Id:</label>
+				<div class="col-sm-3">
+					<input type="text" readonly class="form-control"
+						th:field="${tmio1Bus.id}">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Capacidad:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control"
+						th:field="${tmio1Bus.capacidad}"> <span
+						th:if="${#fields.hasErrors('capacidad')}" th:errors="*{capacidad}"
+						class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Marca:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control"
+						th:field="${tmio1Bus.marca}"> <span
+						th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"
+						class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Modelo:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control"
+						th:field="${tmio1Bus.modelo}"> <span
+						th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"
+						class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Placa:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control"
+						th:field="${tmio1Bus.placa}"> <span
+						th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"
+						class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="inputPassword" class="col-sm-2 col-form-label">Tipo:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" th:field="${tmio1Bus.tipo}">
+					<span th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"
+						class="text-danger"></span>
+				</div>
+			</div>
+			<div>
+				<p>
+					<a href="/bus"> <i class="fa fa-home"> </i> Regresar
+					</a>
+				</p>
+			</div>
+	</div>
+
+	</form>
+
+	</div>
+</body>
+
+</html>

@@ -10,8 +10,10 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "login";
-	}
+	}	
 	
-	
-	
+	@RequestMapping(value = "/example", method = RequestMethod.GET)
+	public String example() {
+		return "example";
+	}	
 }
